@@ -23,6 +23,9 @@ android {
     lintOptions {
         abortOnError false
     }
+dexOptions {
+        preDexLibraries = false
+    }
 
     sourceSets {
         main {
@@ -46,8 +49,11 @@ dependencies {
 //FindBugs task that load security rules only
 task findSecurityBugs(type: FindBugs) {
 
-    classes = fileTree(project.rootDir.absolutePath).include("**/*.class");
-    source = fileTree(project.rootDir.absolutePath).include("**/*.java");
+    //classes = fileTree(project.rootDir.absolutePath).include("**/*.class");
+    //source = fileTree(project.rootDir.absolutePath).include("**/*.java");
+
+    classes = fileTree("$project.buildDir/intermediates/classes/release/com/jakhar/aseem/diva")
+    source = fileTree('src/main/java')
 
     classpath = files()
     pluginClasspath = project.configurations.findbugsPlugins
