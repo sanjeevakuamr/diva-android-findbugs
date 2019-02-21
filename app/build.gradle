@@ -30,8 +30,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.android.support:design:23.1.0'
-dependencies {
-
 
     //Dependencies for FindBugs and FindBugs plugins
     findbugs 'com.google.code.findbugs:findbugs:3.0.1'
@@ -64,5 +62,4 @@ task findSecurityBugs(type: FindBugs) {
 //            html.destination = file("$project.buildDir/outputs/findbugs/findbugs.html")
 //        }
     }
-}
 }
